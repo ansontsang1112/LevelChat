@@ -1,0 +1,12 @@
+name: LevelChat
+version: '${project.version}'
+main: com.hypernite.plugin.os.levelchat.main.LevelChat
+api-version: 1.18
+authors: [ AnsonTsang ]
+description: A Level Chat Plugin
+website: https://www.hypernite.com
+commands:
+  lc-reload:
+    description: Reload Plugin
+    usage: /lc-reload
+    permission: levelchat.reload

@@ -1,0 +1,28 @@
+# Level Chat Configuration
+# Please do not change any placeholder (%xxx%)
+
+settings:
+  enable: true
+  enable_console_log: false
+  console_message: "%player% has reached %level% at %time%"
+  prefix: "[&aLevelChat&f]"
+
+titles:
+  enable: false
+  title: "&aLevel Up"
+  subtitle: "Congratulation, you are now at level %level%"
+  duration: 10 # The time which the title flow on the screen
+
+message:
+  chat:
+    enable: true
+    upgrade_msg: "Congratulation, level Up! Your level changed from LV.%oldLevel% to LV.%level%"
+    downgrade_msg: "Oh no, your level reduced from %oldLevel% to %level%"
+  global:
+    enable: false
+    global_announcement_requirement: # When the user reach this level, a global announcement will be made.
+      - 10
+      - 20
+      - 30
+    msg: "Congratulation, %player% has reached level %level%"
+
