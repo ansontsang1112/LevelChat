@@ -1,5 +1,6 @@
 # Level Chat Configuration
 # Please do not change any placeholder (%xxx%)
+# All duration calculated in second
 
 settings:
   enable: true
@@ -7,11 +8,15 @@ settings:
   console_message: "%player% has reached %level% at %time%"
   prefix: "[&aLevelChat&f]"
 
+chat_format:
+  enable: false
+  format: "[LV: %level%]&f"
+
 titles:
   enable: false
   title: "&aLevel Up"
   subtitle: "Congratulation, you are now at level %level%"
-  duration: 10 # The time which the title flow on the screen
+  duration: 10
 
 message:
   chat:
@@ -25,4 +30,3 @@ message:
       - 20
       - 30
     msg: "Congratulation, %player% has reached level %level%"
-

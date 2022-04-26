@@ -1,7 +1,7 @@
 package com.hypernite.plugin.os.levelchat.listener;
 
-import com.hypernite.plugin.os.levelchat.Utils.ColorConfigurator;
-import com.hypernite.plugin.os.levelchat.Utils.ConsoleMessageSender;
+import com.hypernite.plugin.os.levelchat.utils.ColorConfigurator;
+import com.hypernite.plugin.os.levelchat.utils.ConsoleMessageSender;
 import com.hypernite.plugin.os.levelchat.main.LevelChat;
 import com.hypernite.plugin.os.levelchat.manager.ConfigManager;
 import com.hypernite.plugin.os.levelchat.manager.TitleManager;
@@ -58,9 +58,11 @@ public class LevelChangeListener implements Listener {
 
         // Title Section
         if(isTitleEnable) {
-            titleManager.setTitle(ColorConfigurator.replace(ConfigManager.title));
-            titleManager.setSubtitle(ColorConfigurator.replace(ConfigManager.subtitle).replace("%level%", newLevel));
-            titleManager.emitTitleMessage();
+            if(e.getNewLevel() > e.getOldLevel()) {
+                titleManager.setTitle(ColorConfigurator.replace(ConfigManager.title));
+                titleManager.setSubtitle(ColorConfigurator.replace(ConfigManager.subtitle).replace("%level%", newLevel));
+                titleManager.emitTitleMessage();
+            }
         }
     }
 }

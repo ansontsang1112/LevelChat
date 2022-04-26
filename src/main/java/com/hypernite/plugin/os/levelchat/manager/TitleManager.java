@@ -21,9 +21,9 @@ public class TitleManager {
 
     public void emitTitleMessage() {
         if(subtitle.isEmpty()) {
-            player.sendTitle(title, "", 10, ConfigManager.titleDuration*20, 70);
+            player.sendTitle(title, "", 10, ConfigManager.titleDuration*10, 10);
         } else {
-            player.sendTitle(title, subtitle, 10, ConfigManager.titleDuration*20, 70);
+            player.sendTitle(title, subtitle, 10, ConfigManager.titleDuration*10, 10);
         }
     }
 }

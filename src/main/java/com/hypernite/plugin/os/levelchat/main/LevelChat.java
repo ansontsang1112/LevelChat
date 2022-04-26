@@ -1,6 +1,7 @@
 package com.hypernite.plugin.os.levelchat.main;
 
-import com.hypernite.plugin.os.levelchat.Utils.ConsoleMessageSender;
+import com.hypernite.plugin.os.levelchat.listener.ChatListener;
+import com.hypernite.plugin.os.levelchat.utils.ConsoleMessageSender;
 import com.hypernite.plugin.os.levelchat.commandExecutor.ReloadCommand;
 import com.hypernite.plugin.os.levelchat.listener.LevelChangeListener;
 import com.hypernite.plugin.os.levelchat.manager.ConfigManager;
@@ -18,6 +19,7 @@ public final class LevelChat extends JavaPlugin {
         // Plugin Logic
         if(ConfigManager.isPluginEnable) {
             this.getServer().getPluginManager().registerEvents(new LevelChangeListener(), this);
+            this.getServer().getPluginManager().registerEvents(new ChatListener(), this);
             this.getCommand("lc-reload").setExecutor(new ReloadCommand());
         } else {
             ConsoleMessageSender.send(ConfigManager.prefix + " &cPlease enable the plugin by changing the config.yml, setting.enable to 'true'", this);

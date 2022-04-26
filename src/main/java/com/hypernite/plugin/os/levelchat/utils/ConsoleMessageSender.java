@@ -1,6 +1,5 @@
-package com.hypernite.plugin.os.levelchat.Utils;
+package com.hypernite.plugin.os.levelchat.utils;
 
-import com.hypernite.plugin.os.levelchat.manager.ConfigManager;
 import org.bukkit.plugin.Plugin;
 
 public class ConsoleMessageSender {

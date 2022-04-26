@@ -8,8 +8,8 @@ import java.io.File;
 import java.util.List;
 
 public class ConfigManager {
-    public static boolean isPluginEnable, isTitleEnable, isChatMessageEnable, isGlobalMessageEnable, isConsoleLog;
-    public static String prefix, title, subtitle, upgradeChatMessage, downgradeChatMessage, globalMessage, consoleLog;
+    public static boolean isPluginEnable, isTitleEnable, isChatMessageEnable, isGlobalMessageEnable, isConsoleLog, isFormatEnable;
+    public static String prefix, title, subtitle, upgradeChatMessage, downgradeChatMessage, globalMessage, consoleLog, chatFormat;
     public static List<?> globalLevels;
     public static int titleDuration;
 
@@ -39,6 +39,7 @@ public class ConfigManager {
         isChatMessageEnable = fileConfiguration.getBoolean("message.chat.enable");
         isGlobalMessageEnable = fileConfiguration.getBoolean("message.global.enable");
         isConsoleLog = fileConfiguration.getBoolean("settings.enable_console_log");
+        isFormatEnable = fileConfiguration.getBoolean("chat_format.enable");
 
         prefix = fileConfiguration.getString("settings.prefix");
         title = fileConfiguration.getString("titles.title");
@@ -48,7 +49,13 @@ public class ConfigManager {
         globalMessage = fileConfiguration.getString("message.global.msg");
         globalLevels = fileConfiguration.getList("message.global.global_announcement_requirement");
         consoleLog = fileConfiguration.getString("settings.console_message");
+        chatFormat = fileConfiguration.getString("chat_format.format");
 
         titleDuration = fileConfiguration.getInt("titles.duration");
+    }
+
+    public void reloadConfig() {
+        fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
+        loadConfig();
     }
 }
